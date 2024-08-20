@@ -26,3 +26,27 @@ const collectEmployees = function () {
   }
   return employeesArray;
 };
+// Display the average salary - You should use a template literal string for this task.
+// TODO: Calculate and display the average salary
+const displayAverageSalary = function (employeesArray) {
+    let sumSalary = 0;
+    let averageSalary = 0;
+  
+    for (let employee of employeesArray) {
+      sumSalary += employee.salary;
+    }
+    averageSalary = sumSalary / employeesArray.length;
+    // or console.log("Average Salary: " + averageSalary);
+    console.log(
+      `The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`
+    );
+  };
+  // Select a random employee - The built in Math object can help with random number generation:
+  const getRandomEmployee = function (employeesArray) {
+    // TODO: Select and display a random employee
+    const randomIndex = Math.floor(Math.random() * employeesArray.length);
+    const randomEmployee = employeesArray[randomIndex];
+    console.log(
+      `Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`
+    );
+  };
