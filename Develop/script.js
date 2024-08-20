@@ -50,3 +50,11 @@ const displayAverageSalary = function (employeesArray) {
       `Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`
     );
   };
+
+  // Display employee data on the webpage
+const displayEmployees = function (employeesArray) {
+    // Get the employee table
+    const employeeTable = document.querySelector("#employee-table");
+  
+    // Clear the employee table
+    employeeTable.innerHTML = "";
