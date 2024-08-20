@@ -58,3 +58,31 @@ const displayEmployees = function (employeesArray) {
   
     // Clear the employee table
     employeeTable.innerHTML = "";
+
+      // Loop through the employee data and create a row for each employee
+  // employeesArray is pulling from the employees Array and can be renamed because the information is copied
+  for (let i = 0; i < employeesArray.length; i++) {
+    const currentEmployee = employeesArray[i];
+
+    const newTableRow = document.createElement("tr");
+
+    const firstNameCell = document.createElement("td");
+    firstNameCell.textContent = currentEmployee.firstName;
+    newTableRow.append(firstNameCell);
+
+    const lastNameCell = document.createElement("td");
+    lastNameCell.textContent = currentEmployee.lastName;
+    newTableRow.append(lastNameCell);
+
+    const salaryCell = document.createElement("td");
+    // Format the salary as currency
+    salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
+    newTableRow.append(salaryCell);
+
+    employeeTable.append(newTableRow);
+  }
+};
