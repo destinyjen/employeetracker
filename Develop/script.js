@@ -86,3 +86,33 @@ const displayEmployees = function (employeesArray) {
     employeeTable.append(newTableRow);
   }
 };
+
+const trackEmployeeData = function () {
+    // checked that your wired up with below
+    // alert('we are inside of track employee data')
+    const employees = collectEmployees();
+  
+    // showing a list in a table
+    console.table(employees);
+  
+    // showing another list
+    displayAverageSalary(employees);
+  
+    console.log("==============================");
+  
+    getRandomEmployee(employees);
+  
+    employees.sort(function (a, b) {
+      if (a.lastName < b.lastName) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+  
+    displayEmployees(employees);
+  };
+  
+  // Add event listener to 'Add Employees' button
+  // This is saying when someone clicks on the Add button, we need to listen and add a user
+  addEmployeesBtn.addEventListener("click", trackEmployeeData);
